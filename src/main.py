@@ -9,3 +9,10 @@ output_dir = root_dir + "\\Output"
 
 file_list = find_file(input_dir)
 
+for f in file_list:
+    file_path = input_dir + "\\" + f
+    
+    split_pdf(file_path, f, output_dir)
+    print("Deleting " + f)
+    os.remove(file_path)
+    
